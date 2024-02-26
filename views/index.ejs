@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quotes</title>
 
+    <link rel="preload" href="https://picsum.photos/400/300" as="image" />
     <style>
       * {
         margin: 0;
@@ -76,6 +77,7 @@
       <div class="picture">
         <img src="https://picsum.photos/400/300" alt="" />
         <div class="quote">
+          
           <% if (randomQuote) { %>
               <p><%= randomQuote.text %></p>
           <% } else { %>
