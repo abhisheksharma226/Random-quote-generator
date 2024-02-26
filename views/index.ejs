@@ -38,16 +38,27 @@
         color: black;
       }
 
-      .picture p{
+      
+
+      .picture {
+        position: relative;
+        display: flex; /* Use flexbox to center the quote */
+        justify-content: center; /* Center the quote horizontally */
+        align-items: center; /* Center the quote vertically */
+        width: 100%; /* Ensure the picture container spans the entire width */
+        height: auto; /* Allow the height to adjust based on the content */
+    }
+    
+    .quote {
         position: absolute;
-        margin: -163px 150px;
-        text-align: center;
-        display: flex;
-        justify-content: center;
-        text-align: center;
-        align-items: center;
-        color: white;
-      }
+        background-color: rgba(255, 255, 255, 0.8); /* Add a semi-transparent background to make the text more readable */
+        padding: 10px; /* Add padding to the quote for better readability */
+        max-width: 80%; /* Limit the width of the quote to 80% of the picture width */
+        text-align: center; /* Center the text horizontally */
+        z-index: 1; /* Ensure the quote is above the picture */
+    }
+    
+    
     </style>
   </head>
   <body>
@@ -63,8 +74,14 @@
         </div>
         
       <div class="picture">
-          <img src="https://picsum.photos/400/300" alt="" />
-          <p>Good Morning</p>
+        <img src="https://picsum.photos/400/300" alt="" />
+        <div class="quote">
+          <% if (randomQuote) { %>
+              <p><%= randomQuote.text %></p>
+          <% } else { %>
+              <p>No quote available</p>
+          <% } %>
+      </div>
       </div>
     </div>
   </body>
